@@ -8,6 +8,7 @@
 * `databricks_me` data source was added to represent `user_name`, `home` & `id` of the caller user (or service principal).
 
 **Behavior changes**
+* Added validation for secret scope name in `databricks_secret`, `databricks_secret_scope` and `databricks_secret_acl`. Non-compliant names may cause errors.
 * `format`, `overwrite`, and `mkdirs` were removed from `databricks_notebook`. TODO: handle RESOURCE_ALREADY_EXISTS for mkdirs.
 * `skip_validation` from `databricks_instance_profile` was removed and is always set to `true` for subsequent requests.
 * `databricks_mws_workspace` got `verify_workspace_runnning` removed and now validates all every deployment. In case deployment failed, it removes workspace that failed and returns error message with explanation.
